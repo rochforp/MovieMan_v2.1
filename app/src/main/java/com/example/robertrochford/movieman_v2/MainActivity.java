@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 
 
@@ -30,7 +32,13 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_actor);
+        String[] actors = getResources().getStringArray(R.array.actors_array);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, actors);
+        textView.setAdapter(adapter);
+
     }
+
 
 
     // Was told to remove it but maybe we can use it...

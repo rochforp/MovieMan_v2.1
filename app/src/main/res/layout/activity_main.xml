@@ -27,5 +27,9 @@
         android:onClick="sendSearch"
         android:layout_gravity="center_vertical" />
 
+    <AutoCompleteTextView
+        android:id="@+id/autocomplete_actor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
