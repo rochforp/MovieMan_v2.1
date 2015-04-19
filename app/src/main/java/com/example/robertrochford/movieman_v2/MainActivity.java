@@ -20,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
         //do something to search our Movie DB in the future. Had to import the View class.
         //an intent can carry data types as key-value pairs called extras
         Intent intent = new Intent (this, DisplaySearchActivity.class);
-        EditText editText = (EditText) findViewById(R.id.edit_message);
+        EditText editText = (EditText) findViewById(R.id.autocomplete_actor);
         //is what we will change
         String search = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, search);

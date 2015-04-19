@@ -17,19 +17,20 @@
         android:layout_weight="1"
         android:textColor="#ffffff"
         android:background="#fc000000"
-        android:layout_gravity="center_vertical" />
+        android:layout_gravity="center_vertical"/>
 
     <!-- no android:id necessary because it won't be referenced from the activity code -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_send"
-        android:onClick="sendSearch"
-        android:layout_gravity="center_vertical" />
+        android:onClick="sendSearch" />
 
     <AutoCompleteTextView
         android:id="@+id/autocomplete_actor"
+        android:layout_gravity="top"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        />
 
 </LinearLayout>
