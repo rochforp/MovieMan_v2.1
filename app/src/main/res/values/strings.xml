@@ -8,6 +8,9 @@
     <string name="title_activity_display_search">Display Search</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="radio_actor">Actor</string>
+    <string name="radio_director">Director</string>
+    <string name="btn_display">Display</string>
 
     <string-array name="actors_array">
         <item>Kevin Bacon</item>

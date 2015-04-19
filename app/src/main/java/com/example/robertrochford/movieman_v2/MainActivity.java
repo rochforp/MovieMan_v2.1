@@ -9,11 +9,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.view.View.OnClickListener;
+import android.widget.Toast;
+
+
 
 
 public class MainActivity extends ActionBarActivity {
     public final static String EXTRA_MESSAGE = "com.example.rochford.MovieMan_v2.MESSAGE";
+    private RadioGroup radioSexGroup;
+    private RadioButton radioSexButton;
+    private Button btnDisplay;
 
     /* Called when the user clicks out search button. View will be the view returned when clicked*/
     public void sendSearch(View view){
@@ -36,9 +46,32 @@ public class MainActivity extends ActionBarActivity {
         String[] actors = getResources().getStringArray(R.array.actors_array);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, actors);
         textView.setAdapter(adapter);
-
+        addListenerOnButton();
     }
 
+    public void addListenerOnButton() {
+
+        radioSexGroup = (RadioGroup) findViewById(R.id.radioSex);
+        btnDisplay = (Button) findViewById(R.id.btnDisplay);
+
+        btnDisplay.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // get selected radio button from radioGroup
+                int selectedId = radioSexGroup.getCheckedRadioButtonId();
+
+                // find the radiobutton by returned id
+                radioSexButton = (RadioButton) findViewById(selectedId);
+
+                Toast.makeText(MainActivity.this,
+                        radioSexButton.getText(), Toast.LENGTH_SHORT).show();
+
+            }
+
+        });
+    }
 
 
     // Was told to remove it but maybe we can use it...
