@@ -17,9 +17,8 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 
-
-
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity
+{
     public final static String EXTRA_MESSAGE = "com.example.rochford.MovieMan_v2.MESSAGE";
     private RadioGroup radioSexGroup;
     private RadioButton radioSexButton;
@@ -35,7 +34,6 @@ public class MainActivity extends ActionBarActivity {
         String search = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, search);
         startActivity(intent);
-
     }
 
     @Override
@@ -50,8 +48,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void addListenerOnButton() {
-
-        radioSexGroup = (RadioGroup) findViewById(R.id.radioSex);
+    radioSexGroup = (RadioGroup) findViewById(R.id.radioSex);
         btnDisplay = (Button) findViewById(R.id.btnDisplay);
 
         btnDisplay.setOnClickListener(new OnClickListener() {
@@ -73,6 +70,21 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radioActors:
+                if (checked)
+                    // Display actors
+                    break;
+            case R.id.radioDirectors:
+                if (checked)
+                    // Display directors
+                    break;
+        }
+    }
 
     // Was told to remove it but maybe we can use it...
     @Override

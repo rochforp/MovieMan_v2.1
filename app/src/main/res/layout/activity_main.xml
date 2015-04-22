@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@mipmap/movie_background"
-    >
+    android:background="@mipmap/movie_background">
+
+    <!-- Dont put radio buttons inside the radio group unless we only want one to be selected-->
     <RadioGroup
         android:id="@+id/radioSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
-
     </RadioGroup>
 
     <RadioButton
@@ -21,18 +21,10 @@
         android:layout_gravity="center_vertical"
         android:layout_alignTop="@+id/radioActors"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <!-- wanted to name it edit_search instead of edit_message but don't wanna mess anything up -->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_send"
-        android:onClick="sendSearch"
-        android:id="@+id/button"
-        android:layout_below="@+id/autocomplete_actor"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="OnRadioButtonClicked"
+    />
+    <!--android: android:onClick="sendSearchDirector" this will handle the search for directors. Still need to write -->
 
     <RadioButton
         android:id="@+id/radioActors"
@@ -42,7 +34,12 @@
         android:layout_gravity="center_vertical"
         android:layout_marginTop="90dp"
         android:layout_below="@+id/edit_message"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:checked="true"
+
+        />
+    <!--android: android:onClick="sendSearchActor" this will handle the search for directors. Still need to write -->
+
     <Button
         android:id="@+id/btnDisplay"
         android:layout_width="wrap_content"
@@ -51,6 +48,16 @@
         android:layout_alignTop="@+id/button"
         android:layout_alignRight="@+id/radioDirectors"
         android:layout_alignEnd="@+id/radioDirectors" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_send"
+        android:onClick="sendSearch"
+        android:id="@+id/button"
+        android:layout_below="@+id/autocomplete_actor"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/edit_message"
@@ -71,6 +78,5 @@
         android:layout_below="@+id/radioDirectors"
         android:layout_alignRight="@+id/button"
         android:layout_alignEnd="@+id/button" />
-
 
 </RelativeLayout>
