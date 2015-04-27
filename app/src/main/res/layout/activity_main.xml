@@ -45,12 +45,9 @@
         android:layout_height="wrap_content"
         android:text="@string/radio_title"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="90dp"
-        android:layout_below="@+id/edit_message"
-        android:layout_centerHorizontal="true"
-        android:checked="true"
-
-        />
+        android:layout_above="@+id/autocomplete_actor"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
     <!--android: android:onClick="sendSearchActor" this will handle the search for directors. Still need to write -->
 
     <Button
