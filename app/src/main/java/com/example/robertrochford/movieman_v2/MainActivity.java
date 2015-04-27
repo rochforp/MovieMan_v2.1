@@ -83,6 +83,10 @@ public class MainActivity extends ActionBarActivity
                 if (checked)
                     // Display directors
                     break;
+            case R.id.radioTitle:
+                if (checked)
+                    // Display directors
+                    break;
         }
     }
 
