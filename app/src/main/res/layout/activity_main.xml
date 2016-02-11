@@ -1,14 +1,74 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@mipmap/movie_background"
+    android:background="@mipmap/movie_background">
 
-    >
+    <!-- Dont put radio buttons inside the radio group unless we only want one to be selected-->
+    <RadioGroup
+        android:id="@+id/radioSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </RadioGroup>
 
-    <!-- wanted to name it edit_search instead of edit_message but don't wanna mess anything up -->
+    <CheckBox
+        android:id="@+id/radioDirectors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/radio_director"
+        android:layout_gravity="center_vertical"
+        android:layout_alignTop="@+id/radioActors"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+
+    />
+    <!--android: android:onClick="sendSearchDirector" this will handle the search for directors. Still need to write -->
+
+    <CheckBox
+        android:id="@+id/radioActors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/radio_actor"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="90dp"
+        android:layout_below="@+id/edit_message"
+        android:layout_centerHorizontal="true"
+        android:checked="true"
+
+        />
+
+    <CheckBox
+        android:id="@+id/radioTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/radio_title"
+        android:layout_gravity="center_vertical"
+        android:layout_above="@+id/autocomplete_actor"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
+    <!--android: android:onClick="sendSearchActor" this will handle the search for directors. Still need to write -->
+
+    <Button
+        android:id="@+id/btnDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_display"
+        android:layout_alignTop="@+id/button"
+        android:layout_alignRight="@+id/radioDirectors"
+        android:layout_alignEnd="@+id/radioDirectors" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_send"
+        android:onClick="sendSearch"
+        android:id="@+id/button"
+        android:layout_below="@+id/autocomplete_actor"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
     <EditText
         android:id="@+id/edit_message"
         android:layout_width = "0dp"
@@ -17,15 +77,16 @@
         android:layout_weight="1"
         android:textColor="#ffffff"
         android:background="#fc000000"
-        android:layout_gravity="center_vertical" />
+        android:layout_gravity="center_vertical"/>
 
     <!-- no android:id necessary because it won't be referenced from the activity code -->
-    <Button
-        android:layout_width="wrap_content"
+
+    <AutoCompleteTextView
+        android:id="@+id/autocomplete_actor"
+        android:layout_width="483dp"
         android:layout_height="wrap_content"
-        android:text="@string/button_send"
-        android:onClick="sendSearch"
-        android:layout_gravity="center_vertical" />
+        android:layout_below="@+id/radioDirectors"
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button" />
 
-
-</LinearLayout>
+</RelativeLayout>

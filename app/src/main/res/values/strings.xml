@@ -8,4 +8,23 @@
     <string name="title_activity_display_search">Display Search</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="radio_actor">Actor</string>
+    <string name="radio_director">Director</string>
+    <string name="btn_display">Display</string>
+    <string name="radio_title">Title</string>
+
+    <string-array name="actors_array">
+        <item>Kevin Bacon</item>
+        <item>Kevin Spacey</item>
+        <item>Kyle Mclean</item>
+        <item>Kristin Wigg</item>
+        <item>Kasey Musgraves</item>
+        <item>Kurt Cobain</item>
+        <item>Kent Football</item>
+        <item>Kery Russell</item>
+        <item>Kevin James</item>
+        <item>Kevin Adams</item>
+
+    </string-array>
+
 </resources>
